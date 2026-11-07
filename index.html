@@ -30,9 +30,99 @@
     footer{padding:28px 0 38px;border-top:1px solid var(--line);color:var(--dim);font:10px var(--mono)}.footer-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}.footer-mark{color:var(--muted)}.footer-mark span{color:var(--cyan)}.footer-links{display:flex;flex-wrap:wrap;gap:19px}.footer-links a:hover{color:var(--cyan)}
     @media(max-width:930px){.hero-grid,.workflow{grid-template-columns:1fr;gap:48px}.console{max-width:760px}.workflow{gap:35px}}@media(max-width:680px){.wrap{width:min(100% - 28px,1180px)}.nav{height:67px}.nav nav{gap:12px}.nav nav a:not(.nav-github){display:none}.hero{padding-top:59px}.hero-copy{font-size:15px}.stats-grid{grid-template-columns:repeat(2,1fr)}.stat:nth-child(3){border-left:1px solid var(--line)}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}section{padding:76px 0}.cards,.screen-grid{grid-template-columns:1fr;margin-top:31px}.card{min-height:auto}.console-body{grid-template-columns:1fr;font-size:10px}.console-list{border-right:0;border-bottom:1px solid var(--line2)}.console-detail{min-height:230px}.console-foot{gap:9px;font-size:8px}.install-box{flex-direction:column}.copy{align-self:stretch}.footer-row{align-items:flex-start;flex-direction:column}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
   </style>
+  <link rel="stylesheet" href="https://cybercoretech.github.io/kit/chooser.css">
+  <style>
+    cybercore-theme-chooser{--ccx-bg:var(--panel);--ccx-fg:var(--text);--ccx-line:var(--line);--ccx-accent:var(--cyan);--ccx-focus:var(--blue);--ccx-field:var(--void);--ccx-muted:var(--muted);--ccx-button-bg:transparent;--ccx-button-border:var(--line);--ccx-radius:0px;--ccx-button-width:auto;--ccx-height:2.25rem;--ccx-glow:.5;}
+  </style>
+  <script>window.SITE = Object.assign(window.SITE || {}, {"siteLabel": "Cyberplug", "themeVars": {"bg": "--void", "white": "--text", "acid_green": "--cyan", "cyan": "--blue", "orange": "--amber"}});</script>
+  <script type="module" src="https://cybercoretech.github.io/kit/chooser.js"></script>
+  <style id="cc-mobile-first">
+/* Mobile floor (phones + tablets): readable text and finger-sized targets.
+   Generated per range from what renders under 11px / 24px; desktop untouched. */
+@media (max-width: 600px) {
+  div.release > span,
+  div.console-title,
+  div.online,
+  div.console-tab,
+  p.console-label,
+  div.console-row,
+  span.tag,
+  div.detail-line,
+  div.detail-line > b,
+  p.detail-copy,
+  div.detail-action,
+  div.console-foot > span,
+  span > b,
+  span.stat-index,
+  small,
+  figcaption,
+  figcaption > b,
+  #copy-command,
+  div.install-meta > span,
+  div.footer-mark,
+  div.footer-mark > span,
+  div.footer-links > a,
+  div.footer-links > span { font-size: 11px !important; }
+}
+@media (min-width: 601px) and (max-width: 860px) {
+  div.release > span,
+  div.console-title,
+  div.online,
+  div.console-tab,
+  p.console-label,
+  div.console-foot > span,
+  span > b,
+  span.stat-index,
+  small,
+  figcaption,
+  figcaption > b,
+  #copy-command,
+  div.install-meta > span,
+  div.footer-mark,
+  div.footer-mark > span,
+  div.footer-links > a,
+  div.footer-links > span { font-size: 11px !important; }
+}
+@media (min-width: 861px) and (max-width: 1024px) {
+  div.release > span,
+  div.console-title,
+  div.online,
+  div.console-tab,
+  p.console-label,
+  div.console-foot > span,
+  span > b,
+  span.stat-index,
+  small,
+  figcaption,
+  figcaption > b,
+  #copy-command,
+  div.install-meta > span,
+  div.footer-mark,
+  div.footer-mark > span,
+  div.footer-links > a,
+  div.footer-links > span { font-size: 11px !important; }
+}
+@media (pointer: coarse) {
+  div.footer-links > a { min-height: 24px; min-width: 24px; }
+}
+/* Layout fixes: phones and tablets only; laptops and desktops untouched. */
+@media (max-width: 1024px) {
+  /* Mobile first: nothing may make the page wider than the screen.
+     Grid/flex columns may shrink below their widest line; code scrolls in place. */
+  pre { max-width: 100%; overflow-x: auto; }
+  img, video { max-width: 100%; height: auto; }
+  div.wrap > * { min-width: 0; }
+  div.console-head > * { min-width: 0; }
+  div.console-tabs > * { min-width: 0; }
+  div.console-body > * { min-width: 0; }
+  div.console-list > div.console-row { white-space: normal; overflow-wrap: anywhere; }
+  /* Long paths and URLs in inline code may break anywhere instead of widening the page. */
+  :not(pre) > code { overflow-wrap: anywhere; }
+}
+  </style>
 </head>
 <body>
-  <header><div class="wrap nav"><a class="brand" href="#top" aria-label="Cyberplug home"><img src="assets/brand/cyberplug-favicon.svg" alt=""><b>CYBER<span>PLUG</span></b></a><nav aria-label="Primary navigation"><a href="#control">Control plane</a><a href="#screens">Screens</a><a href="#workflow">Workflow</a><a href="#install">Install</a><a class="nav-github" href="https://github.com/cybercoretech/cyberplug">GitHub ↗</a><a href="https://cybercoretech.github.io/cybercore/docs.html">MASTER DOCS ↗</a></nav></div></header>
+  <header><div class="wrap nav"><a class="brand" href="#top" aria-label="Cyberplug home"><img src="assets/brand/cyberplug-favicon.svg" alt=""><b>CYBER<span>PLUG</span></b></a><nav aria-label="Primary navigation"><a href="#control">Control plane</a><a href="#screens">Screens</a><a href="#workflow">Workflow</a><a href="#install">Install</a><a class="nav-github" href="https://github.com/cybercoretech/cyberplug">GitHub ↗</a><a href="https://cybercoretech.github.io/cybercore/docs.html">MASTER DOCS ↗</a><cybercore-theme-chooser compact match="header nav a:not(.nav-github)"></cybercore-theme-chooser></nav></div></header>
   <main id="top">
     <section class="hero"><div class="wrap hero-grid"><div><p class="eyebrow">OMARCHY // QUATTRO SHELL // KEYBOARD FIRST</p><h1>Make your plugins feel <span>plugged in.</span></h1><p class="hero-copy">Cyberplug is a terminal plugin manager and bar widget for Omarchy. Browse the community registry, install what you need, and keep your desktop setup in a profile you can move.</p><div class="hero-actions"><a class="button" href="#install">Install Cyberplug <span>↓</span></a><a class="button secondary" href="#control">Explore the control plane <span>↘</span></a></div><div class="release"><span>71+ plugins in view</span><span>·</span><span>Rust · TUI · Quattro shell</span></div></div>
       <div class="console" aria-label="Cyberplug terminal preview"><div class="console-head"><div class="dots"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div><div class="console-title">cyberplug — plugin control</div><div class="online">REGISTRY ONLINE</div></div><div class="console-tabs"><div class="console-tab active">plugins · 71</div><div class="console-tab">discover</div><div class="console-tab">profile</div></div><div class="console-body"><div class="console-list"><p class="console-label">cyberplug — installed</p><div class="console-row selected"><span class="bullet">●</span>Notification Center <span class="tag">[community]</span></div><div class="console-row"><span class="bullet">●</span>System Monitor <span class="tag">[community]</span></div><div class="console-row"><span class="bullet">●</span>mise radar <span class="tag">[community]</span></div><div class="console-row"><span class="bullet">●</span>Cyberplug <span class="tag">[community]</span></div><div class="console-row"><span class="bullet">●</span>Active window <span class="tag">[core]</span></div><div class="console-row"><span class="bullet">●</span>Battery <span class="tag">[core]</span></div><div class="console-row"><span class="bullet">●</span>Bluetooth <span class="tag">[core]</span></div><div class="console-row"><span class="bullet">●</span>Workspace Manager <span class="tag">[community]</span></div></div><div class="console-detail"><p class="console-label">details — selected plugin</p><h3 class="detail-title">Notification Center</h3><div class="detail-line"><b>id:</b> abran-labs.notification-center</div><div class="detail-line"><b>status:</b> enabled</div><div class="detail-line"><b>category:</b> System</div><div class="detail-line"><b>kind:</b> bar-widget</div><p class="detail-copy">Unread badge, click-through messages, swipe-to-dismiss, and per-app rules for the Omarchy bar.</p><div class="detail-action">› press ENTER to configure</div></div></div><div class="console-foot"><span><b>j/k</b> navigate</span><span><b>a</b> add</span><span><b>e</b> enable</span><span><b>d</b> disable</span><span><b>P</b> profile</span><span><b>q</b> quit</span></div></div>
